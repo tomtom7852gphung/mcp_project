@@ -1,0 +1,15 @@
+# mcp
+fastmcp==2.14.4
+
+# LLM
+langchain==1.2.7
+langchain-core==1.2.7
+langchain-openai==1.1.7
+
+# Data analysis
+numpy==1.25.2
+pandas==2.0.3
+
+# other
+pytest==9.0.2
+python-dateutil==2.9.0.post0

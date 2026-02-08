@@ -1,0 +1,15 @@
+[project]
+name = "calendar-mcp-server"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastmcp==2.14.4",
+    "langchain==1.2.7",
+    "langchain-core==1.2.7",
+    "langchain-openai==1.1.7",
+    "numpy==1.25.2",
+    "pandas==2.0.3",
+    "python-dateutil==2.9.0.post0",
+]
