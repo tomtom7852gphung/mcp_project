@@ -273,6 +273,8 @@ def is_valid_working_day(date_str):
         return False , f"日期解析錯誤: {e}"    
 ```
 
+> **備註:** 由於 2027 年之後之政府行政機關辦公日曆表尚未公布，此專案在 2027 年 以後的工作日判斷，暫時依據是否為週末，作為工作日基礎判準
+
 
 ## 3. MCP Tool 定義 (`check_workday_status`)
 
@@ -286,10 +288,6 @@ def check_workday_status(date_str: str) -> str:
     is_work , reason = is_valid_working_day(date_str)
     return "OK" if is_work else f"FAIL: {reason}"
 ```
-
-
-> **備註:** 由於 2027 年之後之政府行政機關辦公日曆表尚未公布，此專案在2026年以後的工作日判斷，暫時依據是否為週末，作為工作日基礎判準
-
 
 
 # 如何設計 Prompt 或 Workflows 來避免模型幻覺
