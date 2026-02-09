@@ -61,9 +61,9 @@
 ## 如何啟動系統
 請依照以下步驟啟動系統:
 
-## 1. 憑證與環境變數配置
+### 1. 憑證與環境變數配置
 
-### 將目錄下的 .env.example 重新命名為 .env
+#### 將目錄下的 .env.example 重新命名為 .env
 
 **在 `.env` 中填入您的 Azure OpenAI 憑證:**
 ```env
@@ -74,15 +74,15 @@ AZURE_DEPLOYMENT=your_deployment_name
 ```
 
 
-## 2. 環境初始化
+### 2. 環境初始化
 
-### 環境需求(Prerequisites)
+#### 環境需求(Prerequisites)
 
 - **Python 3.8 以上**(僅用於初次安裝 uv 工具本身)
 - **專案執行環境**: Python 3.10(由 uv 自動管理)
 
 
-### 安裝 uv(若系統尚未安裝)
+#### 安裝 uv(若系統尚未安裝)
 
 若系統已具備 Python 3.8 以上版本，可直接透過 pip 安裝:
 
@@ -107,7 +107,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 
 
-### 初始化專案環境
+#### 初始化專案環境
 - 執行以下指令，uv 會自動下載 Python 3.10 並建立虛擬環境，依據專案內既有的相依設定建立虛擬環境與安裝套件
 - 由於專案目錄中已包含 `pyproject.toml` 與 `uv.lock`
 - 所有套件相依與版本鎖定皆以此為準，因此無需再透過 `requirements.txt` 重新建置環境
@@ -128,7 +128,7 @@ uv sync
 
 
 
-## 3. 啟動 MCP Calendar Server(Terminal 1)
+### 3. 啟動 MCP Calendar Server(Terminal 1)
 
 啟動行程表服務端，負責讀取 calendar.json 與 calendar_2026_process.csv:
 
@@ -136,12 +136,12 @@ uv sync
 uv run server.py
 ```
 
-## 4. 執行 Email Agent 主程式(Terminal 2)
+### 4. 執行 Email Agent 主程式(Terminal 2)
 ```bash
 uv run agent.py
 ```
 
-### 執行後產出檔案
+#### 執行後產出檔案
 
 執行完成後，會更新或生成以下三個檔案:
 
@@ -153,7 +153,7 @@ uv run agent.py
 
 
 
-### agent_final_results.json 欄位說明
+#### agent_final_results.json 欄位說明
 
 - **id**：郵件編號  
 - **category**: 郵件意圖分類結果  
