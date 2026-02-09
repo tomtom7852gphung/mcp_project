@@ -54,8 +54,12 @@
 
 # 如何啟動程式 & MCP Server
 
-- 在此專案中，採用 uv 作為套件管理工具，並使用 LangChain OpenAI 整合 Azure OpenAI Service (GPT-4o)
-- 請依照以下步驟啟動系統:
+## 執行環境說明
+- 在此專案中，採用 **uv** 作為套件管理工具
+- **LLM 建議配置**: 本專案於開發與測試階段，使用部署於 Azure OpenAI Service 的 **GPT-4o** 作為語言模型
+
+## 如何啟動系統
+請依照以下步驟啟動系統:
 
 ## 1. 憑證與環境變數配置
 
@@ -80,7 +84,7 @@ AZURE_DEPLOYMENT=your_deployment_name
 
 ### 安裝 uv(若系統尚未安裝)
 
-- 若系統已具備 Python 3.8 以上版本，可直接透過 pip 安裝:
+若系統已具備 Python 3.8 以上版本，可直接透過 pip 安裝:
 
 ```bash
 pip install uv==0.9.28
