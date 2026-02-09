@@ -41,8 +41,8 @@
 - **llm_setting.py**: LLM 配置與 Pydantic 結構化輸出定義
 
 ### 基礎事實與資料
-- **emails.json**: 模擬待處理的電子郵件原始數據
-- **calendar_2026_process.csv**: 2026 年臺北市政府行政機關辦公日曆表
+- **emails.json**: 模擬待處理的電子郵件原始數據 (原始 13 封 + 1 封延伸測試案例)
+- **calendar_2026_process.csv**: 臺北市政府行政機關辦公日曆表 (已排除非商務紀念日)
 
 ### 環境配置
 - **pyproject.toml**: uv 套件管理與 Python 版本定義
