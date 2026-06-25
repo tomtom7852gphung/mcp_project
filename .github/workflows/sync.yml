@@ -1,0 +1,11 @@
+name: Sync Develop
+on:
+  push:
+    branches:
+      - develop
+jobs:
+  authorize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say hello
+        run: echo "hello develop"
