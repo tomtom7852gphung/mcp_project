@@ -5,7 +5,7 @@ on:
     branches:
       - develop               # develop 的 push 都會觸發
 jobs:
-  authorize:
+  hello:
     runs-on: ubuntu-latest
     steps:
       - name: Say hello
