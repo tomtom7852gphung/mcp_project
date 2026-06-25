@@ -1,12 +1,12 @@
 name: Sync
 on:
-  workflow_dispatch:
+  workflow_dispatch:          # 手動觸發(從 master)
   push:
     branches:
-      - develop
+      - develop               # develop 的 push 都會觸發
 jobs:
   authorize:
     runs-on: ubuntu-latest
     steps:
       - name: Say hello
-        run: echo "hello"
+        run: echo "hello ${{ github.ref_name }}"   # 自動印出當下 branch
