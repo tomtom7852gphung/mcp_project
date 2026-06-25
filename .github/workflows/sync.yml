@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - master
+      - develop
 jobs:
   authorize:
     runs-on: ubuntu-latest
