@@ -5,10 +5,24 @@ on:
     branches:
       - develop               # develop 的 push 會觸發
     paths:
-      - 'sync/**'             # 只有這個路徑下有變動才觸發  
+      - 'sync/**'             # 只有 sync 這個路徑下有變動才觸發
 jobs:
-  hello:
+  show-changes:
     runs-on: ubuntu-latest
     steps:
-      - name: Say hello
-        run: echo "hello ${{ github.ref_name }}"   # 自動印出當下 branch
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0          # 取得完整歷史,才能 diff push 前後
+
+      - name: Show changed files
+        run: |
+          echo "Branch: ${{ github.ref_name }}"
+          echo "Push: ${{ github.event.before }} -> ${{ github.sha }}"
+          echo "--- 異動的檔案 ---"
+          if [ "${{ github.event.before }}" = "0000000000000000000000000000000000000000" ]; then
+            # 首次 push 此分支,沒有 before,改看最新 commit 的變動
+            git show --name-only --pretty=format: ${{ github.sha }}
+          else
+            git diff --name-only ${{ github.event.before }} ${{ github.sha }}
+          fi
