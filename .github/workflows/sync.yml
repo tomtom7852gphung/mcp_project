@@ -3,7 +3,9 @@ on:
   workflow_dispatch:          # 手動觸發(從 master)
   push:
     branches:
-      - develop               # develop 的 push 都會觸發
+      - develop               # develop 的 push 會觸發
+    paths:
+      - 'sync/**'             # 只有這個路徑下有變動才觸發  
 jobs:
   hello:
     runs-on: ubuntu-latest
