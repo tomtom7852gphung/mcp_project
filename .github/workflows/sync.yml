@@ -1,0 +1,12 @@
+name: Sync
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - develop
+jobs:
+  authorize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say hello
+        run: echo "hello"
